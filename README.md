@@ -21,7 +21,9 @@
 ##Extra
 
 Extra #1: Added a navbar and sidebard just to give it a feeling that it is being developed into a full application.
+
 Extra #2: Added responsiveness. It could use a couple more waves of responsiveness, but I did what I could within the time constraints of my current development work.
+
 Extra #3: Used some branding colors via the Kadince website and pulled off the artwork to mimic the branding.
 
 ##Summary 
