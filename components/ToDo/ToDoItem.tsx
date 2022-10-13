@@ -2,17 +2,19 @@ import React, { useState, useEffect} from "react";
 import styles from "../../styles/ToDo.module.css";
 
 interface input {
+    keyID: string,
     task: string,
     status: string,
     index: number,
-    deleteItem: (index: number) => void,
+    deleteItem: (keyID: string) => void,
     editTaskStatus: boolean,
-    toggleEditTask: (index: number) => void,
-    editStatus: (index: number) => void,
-    handleTaskEdit: (index:number, event:string) => void
+    toggleEditTask: (keyID: string) => void,
+    editStatus: (keyID: string) => void,
+    handleTaskEdit: (keyID: string, event:string) => void
 }
 
 const ToDoItem = ({
+        keyID,
         task, 
         status, 
         index, 
@@ -23,30 +25,31 @@ const ToDoItem = ({
         handleTaskEdit
     }: input ) => {
 
-    const handleKeyPress = (event: any, index: number) => {
+    const handleKeyPress = (event: any, keyID: string) => {
         if (event.key === "Enter") {
-            toggleEditTask(index)
+            toggleEditTask(keyID)
         }
+        console.log("key press", event.key)
     }
 
     return (   
-        <div className={styles.item_container} key={index}>
+        <div className={styles.item_container}>
 
             {
                 editTaskStatus ? 
-                    <p className={styles.task_text} onClick={() => toggleEditTask(index)}> {task} </p>:
+                    <p className={styles.task_text} onClick={() => toggleEditTask(keyID)}> {task} </p>:
                     <input 
                         className={styles.input_task_text} 
                         value={task}
-                        onChange={(event) => handleTaskEdit(index, event.target.value)}
-                        onKeyPress={(event) => handleKeyPress(event, index)}
+                        onChange={(event) => handleTaskEdit(keyID, event.target.value)}
+                        onKeyPress={(event) => handleKeyPress(event, keyID)}
                         autoFocus
                     />
             }
             
-            <div className={styles.status_text} onClick={() => editStatus(index)}> {status} </div>
-            <button className={styles.edit_button} onClick={() => toggleEditTask(index)}> </button>
-            <button className={styles.delete_button} onClick={() => deleteItem(index)}> </button> 
+            <div className={styles.status_text} onClick={() => editStatus(keyID)}> {status} </div>
+            <button className={styles.edit_button} onClick={() => toggleEditTask(keyID)}> </button>
+            <button className={styles.delete_button} onClick={() => deleteItem(keyID)}> </button> 
         </div>
     )
 
