@@ -1,0 +1,25 @@
+.navbar_container {
+    background-color: #00ffff;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    align-items: center;
+}
+
+.logo {
+    padding-left: 1.5em;
+}
+
+.nav_items_container {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav_item {
+    padding-right: 2.5em
+}
+
+.nav_item:nth-child(3) {
+    padding-right: 1.5em;
+}

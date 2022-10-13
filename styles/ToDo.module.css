@@ -1,0 +1,172 @@
+/* ToDoContainer.module.css */
+.todo_container {
+    width: 725px;
+    margin: 0 auto 0 auto;
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: 
+        [line1] 20% 
+        [line2] 20%
+        [line3] 20% 
+        [line4] 20%
+        [line5] 20%
+        [line6];
+}
+
+.todo_header {
+    padding: .625em;
+    background-color: rgb(251, 251, 251);
+    grid-column-start: 1;
+    grid-column-end: line6;
+}
+
+.todo_header h2 {
+    margin: 0;
+}
+
+.items_parent_container {
+    background-color: blueviolet;
+    display: grid;
+    height: 500px;
+    grid-column-start: line1;
+    grid-column-end: line6;
+    grid-template-columns: 
+        [first] 16.66%
+        [line2] 16.66%
+        [line3] 16.66%
+        [line4] 16.66%
+        [line5] 16.66%
+        [line6] 16.66%;
+    grid-template-rows: 
+        [row1-start] 12.5% 
+        [row1-end] 12.5% 
+        [row2-start] 12.5% 
+        [row2-end] 12.5%
+        [row3-start] 12.5% 
+        [row3-end] 12.5%
+        [row4-start] 12.5% 
+        [row4-end] 12.5%;
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 10px;
+    margin: 0 .625em 0 .625em;
+}
+
+.item_headers {
+    margin: 0 0.625em 0 0.625em;
+    border-bottom: 1px rgb(106, 106, 106) solid;
+    display: grid;
+    grid-template-columns:
+        [first] 16.66%
+        [line2] 16.66%
+        [line3] 16.66%
+        [line4] 16.66%
+        [line5] 16.66%
+        [line6] 16.66%; 
+    grid-column-start: line1;
+    grid-column-end: line6;
+    
+}
+
+.task_status {
+    grid-column: line4 / span 1;
+    text-align: center;
+}
+
+.task_edit {
+    grid-column: line5 / span 1;
+    text-align: center;
+}
+
+.task_delete {
+    grid-column: line6 / span 1;
+    text-align: center;
+}
+
+/* ToDoInput.module.css */
+.input_container {
+    background: rgb(255, 255, 255);
+    grid-row-start: 2;
+    grid-row-end: span 1;
+    grid-column-start: 1;
+    grid-column-end: span 5;
+}
+
+.input_wrapper {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    justify-content: space-between;
+    margin: 0 auto 0 auto;
+    width: 80%;
+    height: 100%;
+}
+
+.input_wrapper input {
+    width: 80%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.input_wrapper button {
+    width: 15%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.task_text {
+    grid-column-start: 1;
+    grid-column-end: span 3;
+}
+
+.input_task_text {
+    grid-column-start: 1;
+    grid-column-end: span 3;
+}
+/* ToDoSort.module.css*/
+.sort_container {
+    background-color: rgb(255, 255, 255);
+    grid-row-start: 3;
+    grid-row-end: span 1;
+    grid-column-start: 1;
+    grid-column-end: span 5;
+    border-bottom:  1px solid rgb(157, 157, 157);
+    margin: 0 .625em 0 .625em;
+}
+
+.sort_wrapper {
+    width: 80%;
+    margin: 0 auto 0 auto;
+}
+
+/* ToDoItem.module.css */
+
+.item_container {
+    grid-column: first / span 6;
+    border-bottom:  1px solid rgb(157, 157, 157);
+    background-color: rgb(236, 249, 255);
+    display: grid;
+    grid-template-columns:
+        [first] 16.66%
+        [line2] 16.66%
+        [line3] 16.66%
+        [line4] 16.66%
+        [line5] 16.66%
+        [line6] 16.66%; 
+}
+
+.status_text {
+    grid-column: line4 / span 1;
+    text-align: center;
+}
+
+.edit_text {
+    grid-column: line5 / span 1;
+    text-align: center;
+}
+
+.delete_button {
+    grid-column: line6 / span 1;
+    text-align: center;
+}
+
+

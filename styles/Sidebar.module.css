@@ -1,0 +1,24 @@
+.top_spacing {
+    height: 64px;
+    border-bottom: solid 1px rgb(198, 198, 198);
+    text-align: right;
+}
+
+.arrow_button {
+    height: 100%;
+    margin: 0;
+    padding: auto 0 auto 0;
+}
+
+.link_item {
+    display: flex;
+    flex-direction: row;
+}
+
+.link_item p {
+    margin-top: 0;
+}
+
+.first_side_container {
+    border-bottom: solid 1px rgb(198, 198, 198);
+}

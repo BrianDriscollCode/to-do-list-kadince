@@ -3,21 +3,19 @@ import { ReactElement } from "react"
 
 //Application File Imports
 import styles from '../styles/Home.module.css'
-import ToDoContainer from "../components/ToDo/ToDoContainer"
 import { NextPageWithLayout } from "./_app"
 import _Dashboard_Layout from '../components/Layouts/_Dashboard_Layout'
 
 
-const Home: NextPageWithLayout = () => {
+const Login: NextPageWithLayout = () => {
   return (
     <div className={styles.container}>
-        <h1> Kadince To-do List </h1>
-        <ToDoContainer />
+        <h1> Login </h1>
     </div>
   )
 }
 
-Home.getLayout = function getLayout(page: ReactElement) {
+Login.getLayout = function getLayout(page: ReactElement) {
   return (
     <_Dashboard_Layout>
       {page}
@@ -25,4 +23,4 @@ Home.getLayout = function getLayout(page: ReactElement) {
   )
 }
 
-export default Home
+export default Login
