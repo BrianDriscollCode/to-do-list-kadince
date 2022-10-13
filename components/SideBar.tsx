@@ -5,25 +5,21 @@ const SideBar = () => {
     return (
         <div>
             <div className={styles.top_spacing}> 
-                <p className={styles.arrow_button}> {'<'} </p>
+                <h1 className={styles.header}> Kadince </h1>
             </div>
             
             <div className={styles.first_side_container}>
                 <div className={styles.link_item}>
-                    <div> Image </div>
+                    <img src="./see_icon.png" width="24" height="24"/>
                     <p> Dashboard </p>
                 </div>
-                <div className={styles.link_item}>
-                    <div> Image </div>
+                <div className={styles.link_item} >
+                    <img src="./pie_icon.png" width="24" height="24"/>
                     <p> Stocks </p>
                 </div>
                 <div className={styles.link_item}>
-                    <div> Image </div>
+                    <img src="./chart_icon.png" width="24" height="24"/>
                     <p> Purchases </p>
-                </div>
-                <div className={styles.link_item}>
-                    <div> Image</div>
-                    <p> History </p>
                 </div>
             </div>
 

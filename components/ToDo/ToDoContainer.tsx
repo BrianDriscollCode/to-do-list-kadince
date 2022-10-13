@@ -1,12 +1,13 @@
 //Framework Imports
 import { useState, useEffect } from "react";
-import uuid from "react-uuid";
 
 //Application Imports
 import ToDoItem from "./ToDoItem";
 import ToDoSort from "./ToDoSort";
 import styles from "../../styles/ToDo.module.css";
-import { INTERNALS } from "next/dist/server/web/spec-extension/request";
+
+//Library Imports
+import uuid from "react-uuid";
 
 
 const ToDoContainer = () => {
@@ -16,7 +17,7 @@ const ToDoContainer = () => {
         {id: 1, task: 'TaskName', status: 'pending', editTaskStatus: true, keyID: '2104-035b-36e5-3eb-07cdda87fc3b'},
         {id: 2, task: 'TaskName2', status: 'pending', editTaskStatus: true, keyID: '2f0f-38e3-c8e-8bcf-0bfa11b8feee'}
     ]);
-    const [sortSetting, setSortSetting] = useState('pending');
+    const [sortSetting, setSortSetting] = useState('');
 
     const addItem = () => {
         console.log('test')
@@ -49,10 +50,6 @@ const ToDoContainer = () => {
     }
 
     const handleTaskEdit = (keyID: string, event: string ) => {
-        // let tempList = listItems;
-        // tempList[index].task = event
-
-        // setListItems([...tempList])
         let tempList = listItems.map(item => {
             if (item.keyID === keyID) {
                 return {...item, task: event}
@@ -83,14 +80,14 @@ const ToDoContainer = () => {
     return (
         <div className={styles.todo_container}> 
             <div className={styles.todo_header}>
-                <h2> Task Master 2000 </h2>
+                <h2> Kadince To-Do List </h2>
             </div>
 
             {/** Input */}
             <div className={styles.input_container}>
                 <div className={styles.input_wrapper}>
                     <input value={input} onChange={(e) => setInput(e.target.value)} />
-                    <button onClick={addItem}> + </button>
+                    <button onClick={addItem}> <img src="./add_icon.png"/> </button>
                 </div>
             </div>
 

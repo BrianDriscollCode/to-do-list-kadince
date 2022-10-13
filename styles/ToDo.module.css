@@ -1,8 +1,8 @@
 /* ToDoContainer.module.css */
 .todo_container {
     width: 725px;
-    margin: 0 auto 0 auto;
-    background-color: rgb(255, 255, 255);
+    margin: 5.7em auto auto auto;
+    background-color: #FEFCFC;
     display: grid;
     grid-template-columns: 
         [line1] 20% 
@@ -11,16 +11,22 @@
         [line4] 20%
         [line5] 20%
         [line6];
+    -webkit-box-shadow: 0px 1px 4px 1px rgba(94,49,0,0.48);
+    -moz-box-shadow: 0px 1px 4px 1px rgba(94,49,0,0.48);
+    box-shadow: 0px 1px 4px 1px rgba(94,49,0,0.48);
+    color: #555555;
 }
 
 .todo_header {
     padding: .625em;
-    background-color: rgb(251, 251, 251);
+    background-color: #FEFCFC;
     grid-column-start: 1;
     grid-column-end: line6;
+    text-align: center;
 }
 
 .todo_header h2 {
+    color: #555555;
     margin: 0;
 }
 
@@ -46,7 +52,7 @@
         [row3-end] 12.5%
         [row4-start] 12.5% 
         [row4-end] 12.5%;
-    background-color: rgb(255, 255, 255);
+    background-color: #FEFCFC;
     padding-bottom: 10px;
     margin: 0 .625em 0 .625em;
 }
@@ -67,6 +73,10 @@
     
 }
 
+.task_header {
+    padding-left: 1.325em;
+}
+
 .task_status {
     grid-column: line4 / span 1;
     text-align: center;
@@ -84,11 +94,13 @@
 
 /* ToDoInput.module.css */
 .input_container {
-    background: rgb(255, 255, 255);
+    background: #FEFCFC;
     grid-row-start: 2;
     grid-row-end: span 1;
     grid-column-start: 1;
     grid-column-end: span 5;
+    height: 3.5em;
+    margin-top: 2.25em;
 }
 
 .input_wrapper {
@@ -96,54 +108,95 @@
     flex-direction: row;
     height: auto;
     justify-content: space-between;
-    margin: 0 auto 0 auto;
-    width: 80%;
+    margin:  0 auto 0 auto;
+    padding-left: 0.625em;
+    padding-right: 0.625em;
+    width: 100%;
     height: 100%;
 }
 
 .input_wrapper input {
-    width: 80%;
+    width: 90%;
     margin-top: auto;
     margin-bottom: auto;
+    height: 3.5em;
+    padding-left: 0.625em;
+    border: 1px solid #b4cf3d !important;
+}
+
+.input_wrapper input:focus {
+    outline: none !important;
+    border: 1px solid #CBE068;
+    -webkit-box-shadow: 0px 0px 5px 0px#CBE068;
+    -moz-box-shadow: 0px 0px 5px 0px #CBE068;
+    box-shadow: 0px 0px 5px 0px #CBE068;
 }
 
 .input_wrapper button {
-    width: 15%;
+    width: 3.8em;
+    height: 2.9em;
     margin-top: auto;
     margin-bottom: auto;
+    background-color: #CBE068;
+    border: 1px solid #9EB441; 
+    transition: background-color 0.2s;
+}
+
+.input_wrapper button:hover {
+    background-color: #d2fd10;
 }
 
 .task_text {
+    padding-left: 1.325em;
     grid-column-start: 1;
     grid-column-end: span 3;
 }
 
 .input_task_text {
+    font-size: 14px;
     grid-column-start: 1;
     grid-column-end: span 3;
+    height: 80%;
+    align-self: center;
+    width: 90%;
+    margin-left: 1.325em;
 }
 /* ToDoSort.module.css*/
 .sort_container {
-    background-color: rgb(255, 255, 255);
+    background-color: #FEFCFC;
     grid-row-start: 3;
     grid-row-end: span 1;
     grid-column-start: 1;
     grid-column-end: span 5;
-    border-bottom:  1px solid rgb(157, 157, 157);
-    margin: 0 .625em 0 .625em;
+    width: 80%;
+   
+    margin: 0.625em auto 0 auto;
 }
 
 .sort_wrapper {
-    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    width: 10em;
     margin: 0 auto 0 auto;
 }
+
+.select_input {
+    border: 1px solid rgb(172, 250, 94)!important;
+    border-radius: 8px; 
+    width: 100%;
+}
+
+.label {
+    color: #555555;
+ }
 
 /* ToDoItem.module.css */
 
 .item_container {
     grid-column: first / span 6;
     border-bottom:  1px solid rgb(157, 157, 157);
-    background-color: rgb(236, 249, 255);
+    background-color: #FBECEB;
     display: grid;
     grid-template-columns:
         [first] 16.66%
@@ -157,6 +210,9 @@
 .status_text {
     grid-column: line4 / span 1;
     text-align: center;
+    height: 30px;
+    margin-top: 0.9em;
+    border-radius: 5px;
 }
 
 .edit_text {
@@ -164,9 +220,62 @@
     text-align: center;
 }
 
+.edit_button {
+    width: 50%;
+    height: 80%;
+    align-self: center;
+    margin: 0 auto 0 auto;
+    background-color: #DCCC98;
+    transition: background-color 0.4s;
+}
+
+.edit_button:hover {
+    background-color: #F3D6CE;
+}
+
 .delete_button {
     grid-column: line6 / span 1;
     text-align: center;
+    width: 50%;
+    height: 80%;
+    align-self: center;
+    margin: 0 auto 0 auto;
+    background-color: #6A4D56;
+    transition: background-color 0.3s;
 }
 
+.delete_button:hover {
+    background-color: #AC7674;
+}
 
+/** Media Queries **/ 
+
+@media only screen and (max-width: 964px) {
+
+    .todo_container {
+        width: 90%;
+    }
+
+    .item_container {
+        font-size: 14px;
+    }
+
+    .delete_button {
+        height: 50%;
+    }
+
+    .delete_button img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .edit_button {
+        height: 50%;
+    }
+
+    .edit_button img {
+        width: 16px;
+        height: 16px;
+    }
+
+}

@@ -11,7 +11,6 @@ import _Dashboard_Layout from '../components/Layouts/_Dashboard_Layout'
 const Home: NextPageWithLayout = () => {
   return (
     <div className={styles.container}>
-        <h1> Kadince To-do List </h1>
         <ToDoContainer />
     </div>
   )

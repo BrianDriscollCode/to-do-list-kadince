@@ -7,7 +7,6 @@ interface methodPassed {
 
 const ToDoSort = ( { changeSort }: methodPassed ) => {
 
-
     const handleChange = (options: any) => {
         changeSort(options.value)
     }
@@ -18,18 +17,13 @@ const ToDoSort = ( { changeSort }: methodPassed ) => {
         { value: 'complete', label: 'Complete'}
     ]
 
-    const customStyles = {
-        control: () => ({
-            width: 100
-        })
-    }
-
     return (
         <div className={styles.sort_container}>
             
             <div className={styles.sort_wrapper}>
-                <label> Sort </label>
+                <label className={styles.label}> Sort </label>
                 <Select 
+                
                     className={styles.select_input}
                     options={options} 
                     onChange={handleChange}

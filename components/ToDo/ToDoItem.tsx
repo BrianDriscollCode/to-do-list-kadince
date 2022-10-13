@@ -47,9 +47,19 @@ const ToDoItem = ({
                     />
             }
             
-            <div className={styles.status_text} onClick={() => editStatus(keyID)}> {status} </div>
-            <button className={styles.edit_button} onClick={() => toggleEditTask(keyID)}> </button>
-            <button className={styles.delete_button} onClick={() => deleteItem(keyID)}> </button> 
+            <div 
+                className={styles.status_text} 
+                onClick={() => editStatus(keyID)}
+                style={status == "complete" ? {border: "1px solid #aabc5a"} : {border: "1px solid #d14103"}}
+            > 
+                {status} 
+            </div>
+            <button className={styles.edit_button} onClick={() => toggleEditTask(keyID)}>  
+                <img src="./editing_icon.png" />
+            </button>
+            <button className={styles.delete_button} onClick={() => deleteItem(keyID)}> 
+                <img src="./trash_icon.png" />
+            </button> 
         </div>
     )
 

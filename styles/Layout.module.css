@@ -1,5 +1,5 @@
 .app_container {
-    background-color: rgb(255, 255, 255);
+    background-color: #FBECEB;
     display: flex;
     flex-direction: row;
     height: 100%;
@@ -7,9 +7,29 @@
 
 .navbar_container {
     width: 15%;
+    -webkit-box-shadow: 0px 1px 4px 1px rgba(94,49,0,0.48);
+-moz-box-shadow: 0px 1px 4px 1px rgba(94,49,0,0.48);
+box-shadow: 0px 1px 4px 1px rgba(94,49,0,0.48);
+z-index: 2;
 }
 
 .content_container {
-    background-color: rgb(235, 235, 235);
+    background-color: #F3D6CE;
     width: 95%;
+}
+
+@media only screen and (max-width: 964px) {
+    
+    .app_container {
+        flex-direction: column;
+    }
+
+    .content_container {
+        width: 100%;
+    }
+
+    .navbar_container {
+        width: 100%;
+    }
+
 }
